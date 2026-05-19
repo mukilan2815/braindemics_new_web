@@ -1,0 +1,182 @@
+/* ── KEYFRAME ANIMATIONS ── */
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes scroll-line {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(250%); opacity: 0; }
+}
+
+@keyframes purple-breathe {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* ── ANIMATION UTILITIES ── */
+.animate-fade-in {
+  animation: hero-fade-in 1s var(--ease-smooth) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-1 { animation-delay: 0.2s; }
+.animate-fade-in-delay-2 { animation-delay: 0.4s; }
+.animate-fade-in-delay-3 { animation-delay: 0.6s; }
+.animate-fade-in-delay-4 { animation-delay: 0.8s; }
+
+.animate-shimmer {
+  background-size: 300% 300%;
+  animation: shimmer 6s ease infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-slow-spin {
+  animation: slow-spin 40s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: slow-spin 10s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+.animate-purple-breathe {
+  animation: purple-breathe 4s ease-in-out infinite;
+}
+
+/* ── TRANSITION UTILITIES ── */
+.transition-all {
+  transition: all var(--duration-fast) ease;
+}
+
+.transition-transform {
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.transition-colors {
+  transition: color var(--duration-fast), background-color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.transition-opacity {
+  transition: opacity var(--duration-fast);
+}
+
+/* ── OPACITY STATES ── */
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.9s var(--ease-smooth), transform 0.9s var(--ease-smooth);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.35s; }
+.reveal-delay-4 { transition-delay: 0.5s; }
+.reveal-delay-5 { transition-delay: 0.65s; }
+
+/* ── SCALE IN ── */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+}
+
+.reveal-scale--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── FLOATING ORB ── */
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 20px) scale(0.95); }
+  66% { transform: translate(15px, -25px) scale(1.05); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10px, -15px) rotate(5deg); }
+}
+
+.orb-float-1 { animation: orb-float-1 8s ease-in-out infinite; }
+.orb-float-2 { animation: orb-float-2 10s ease-in-out infinite; }
+.orb-float-3 { animation: orb-float-3 6s ease-in-out infinite; }
+
+/* ── LINE DRAW ── */
+@keyframes line-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.line-draw {
+  transform-origin: left;
+  animation: line-draw 1s var(--ease-smooth) forwards;
+}
+
+/* ── MOUNT FADE ── */
+.mount-fade {
+  opacity: 0;
+  transition: opacity var(--duration-slow) ease;
+}
+
+.mount-fade--active {
+  opacity: 1;
+}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(taskkill /PID 28744 /F)",
+      "Bash(taskkill /PID 2760 /F)",
+      "Bash(Start-Sleep -Milliseconds 1000)",
+      "PowerShell(Get-Process | Where-Object { $_.ProcessName -eq 'node' -and $_.Id -eq 2760 } | Stop-Process -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2)",
+      "Bash(curl -s http://localhost:3001)"
+    ]
+  }
+}
