@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Background video + overlays */}
       <div className="hero__bg">
         <video autoPlay  loop playsInline className="hero__video">
-          <source src="/herosection.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dhlmxzfnj/video/upload/v1779157141/herosection_ypvrsh.mp4" type="video/mp4" />
         </video>
         <div className="hero__overlay-radial" />
         <div className="hero__overlay-gradient" />
